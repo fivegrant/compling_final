@@ -1,3 +1,4 @@
+# MODULES: "nltk"
 import nltk
 import re
 
@@ -21,17 +22,11 @@ class Word_Modifier:
             else:
                 hold += '\n'
                 output += hold
-                hold = ''
+                hold = word
         output += hold
             
         with open(self.input_name + '.' + end, 'w') as file:
             file.write(output)
 
         return output
-
-if __name__ == '__main__':
-    def st(a):
-        return a
-    w = Word_Modifier('tap')
-    w.apply(st, 'output')
 

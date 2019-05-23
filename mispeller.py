@@ -1,18 +1,8 @@
-try:
-    nltk.download('cmudict')
-except:
-    pass
-try:
-    nltk.download('corpus')
-except:
-    pass
-try:
-    nltk.download('words')
-except:
-    pass
+# MODULES: "nltk"
+# NLTK DOWNLOADS: "words", "cmudict"
 
 from nltk.corpus import cmudict
-import nltk
+import nltk, re
 import mod
 
 class Mispeller:
@@ -21,13 +11,18 @@ class Mispeller:
         self.real_words = nltk.corpus.words.words()
 
     def mispell(self, word):
-        word = self.pronounce[word]
-        word = ''.join(word)
-        word = word.replace(['1','2','3','4','5','6','7','8','9','0'],'')
-        return word
+        word = word.lower()
+        try:
+            pronouciation = self.pronounce[word]
+        except:
+            return word
+        else:
+            for possible in pronouciation:
+                possible = ''.join(possible)
+                possible = re.sub(r'\d', r'', possible)
 
-if __name__ == "__main__":
-    test = Mispeller()
-    print(test.mispell('word'))
-    print(test.mispell('sentence'))
-    print(test.mispell('cruel'))
+                if possible not in self.real_words:
+                    return possible
+                word = possible
+            return word
+
