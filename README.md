@@ -1,5 +1,7 @@
+
 # Compling Final
 Final Project for Computational Linguistics
+TODO: Finish writing this README
 
 # Usage
 run `telephone.py input_file extension_name`
