@@ -3,14 +3,13 @@
 
 from nltk.corpus import cmudict
 import nltk, re
-import mod
 
-class Mispeller:
+class Misspeller:
     def __init__(self):
         self.pronounce = cmudict.dict()
         self.real_words = nltk.corpus.words.words()
 
-    def mispell(self, word):
+    def misspell(self, word):
         word = word.lower()
         try:
             pronunciation = self.pronounce[word]
