@@ -13,16 +13,16 @@ class Mispeller:
     def mispell(self, word):
         word = word.lower()
         try:
-            pronouciation = self.pronounce[word]
+            pronunciation = self.pronounce[word]
         except:
             return word
         else:
-            for possible in pronouciation:
-                possible = ''.join(possible)
-                possible = re.sub(r'\d', r'', possible)
+            for possible in pronunciation:
+                content = ''.join(possible)
+                content = re.sub(r'\d', r'', content)
 
-                if possible not in self.real_words:
-                    return possible
-                word = possible
+                if content not in self.real_words:
+                    return content
+                word = content
             return word
 
