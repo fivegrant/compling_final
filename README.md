@@ -64,5 +64,5 @@ fit together.
 
 
 ## CMU Dict
-http://www.nltk.org/_modules/nltk/corpus/reader/cmudict.html
-http://www.speech.cs.cmu.edu/cgi-bin/cmudict?in=bubonic
+- http://www.nltk.org/_modules/nltk/corpus/reader/cmudict.html
+- http://www.speech.cs.cmu.edu/cgi-bin/cmudict?in=bubonic
